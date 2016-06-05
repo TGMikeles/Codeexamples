@@ -6,8 +6,8 @@
     version="2.2">
     <!--
     <managed-bean>
-          <managed-bean-name>helloWorld</managed-bean-name>
-          <managed-bean-class>hello.HelloWorld</managed-bean-class>
+          <managed-bean-name>tempConverter</managed-bean-name>
+          <managed-bean-class>model.TemperaturConverter</managed-bean-class>
           <managed-bean-scope>session</managed-bean-scope>
      </managed-bean>
 	-->
