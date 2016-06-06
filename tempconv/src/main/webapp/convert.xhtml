@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Temp Converter</title>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <p:panel header="Temperatur Converter">
+                <h:panelGrid columns="2">
+                    <h:outputText value="Temp " />
+                    <p:inputText value="#{tempConverter.convert}" />
+					  </h:panelGrid>
+					 
+
+                    <p:commandButton value="C->F" ajax="false"
+                        action="#{tempConverter.celsiusToFahrenheit}"/>
+              	          
+                    <p:commandButton value="F->C" ajax="false"
+                        action="#{tempConverter.fahrenheitToCelsius}"/>
+                        
+                      <p:commandButton value="C->F" ajax="false"
+                        action="#{tempConverter.celsiusToKelvin}"/>
+              	          
+                    <p:commandButton value="F->C" ajax="false"
+                        action="#{tempConverter.kelvinToCelsius}"/>
+                        
+                    <p:commandButton value="Reset" ajax="false"
+                        action="#{tempConverter.reset}"/>
+                        
+                    
+            </p:panel>
+			</h:form>
+			
+            
+                <h:panel id="result" header="Result"
+                    rendered="#{not tempConverter.initial}"/>
+                    <h:outputLable value="#{tempConverter.unit}:" /> </h:outputLable>
+                     <h:outputLable value="#{tempConverter.converted}:" /></h:outputLable>
+                </h:panel>
+    </h:body>
+</html>
